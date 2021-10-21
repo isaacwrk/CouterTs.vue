@@ -1,7 +1,9 @@
 <template>
 <div>
-<h1>Contador</h1>
-<h2>{{valor}}</h2>
+    <h1>Contador</h1>
+    <h2>{{ valor }}</h2>
+    <button @click="setValor(-1)">Dec</button>
+    <button @click="setValor(1)">Inc</button>
 </div>
 </template>
 
@@ -9,19 +11,23 @@
 import { defineComponent } from 'vue';
 
 const contador = defineComponent({
+    props:{
+        valorInicial:{
+            type:Number
+        }
+    },
     data(){
         return{
-            valor:0
+            valor: this.valorInicial 
         }
     },
     methods:{
-        setValor(delta:number){
-            this.valor += delta
+        setValor(delta:number):any{
+            this.valor! += delta
         }
     }
 });
 export default contador;
-
 </script>
 
 <style>

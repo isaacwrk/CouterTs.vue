@@ -1,14 +1,15 @@
 <template>
   <div id="app">
+    <Contador :valorInicial = '10'/>
   </div>
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import Contador from '@/components/Contador.vue'
 
 @Options({
-  components: {
-  },
+  components: {Contador},
 })
 export default class App extends Vue {}
 </script>
