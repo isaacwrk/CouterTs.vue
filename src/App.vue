@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Contador :valorInicial = '10'/>
+    <Contador/>
   </div>
 </template>
 
@@ -23,4 +23,5 @@ export default class App extends Vue {}
   color: #2c3e50;
   margin-top: 60px;
 }
+
 </style>

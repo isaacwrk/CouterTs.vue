@@ -1,35 +1,50 @@
 <template>
-<div>
-    <h1>Contador</h1>
-    <h2>{{ valor }}</h2>
-    <button @click="setValor(-1)">Dec</button>
-    <button @click="setValor(1)">Inc</button>
+
+<div class="counter">
+    <div class="main">
+        <h1>Contador</h1>
+        <h2>{{ counter }}</h2>
+    </div>
+    <div class="buttons">
+        <button @click="decreaseCounter">-</button>
+        <button @click="increaseConter">+</button>
+    </div>
 </div>
+
+
 </template>
 
 <script lang='ts'>
-import { defineComponent } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 const contador = defineComponent({
-    props:{
-        valorInicial:{
+     props:{
+        initialValue:{
             type:Number
         }
     },
-    data(){
-        return{
-            valor: this.valorInicial 
+    
+    setup(){
+        let counter = ref(0)
+        const decreaseCounter = function(){
+            counter.value--
         }
-    },
-    methods:{
-        setValor(delta:number):any{
-            this.valor! += delta
+
+        const increaseConter = function(){
+            counter.value++
+        }
+
+        return{
+            counter,
+            decreaseCounter,
+            increaseConter
         }
     }
 });
 export default contador;
 </script>
 
-<style>
 
+<style>
+.buttons{}
 </style>
