@@ -30,7 +30,6 @@ const contador = defineComponent({
         const increaseConter = function(){
             counter.value++
         }
-
         return{
             counter,
             decreaseCounter,
@@ -43,6 +42,17 @@ export default contador;
 
 
 <style>
+.theme{
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    align-items: center;
+    margin-bottom: 2px;
+    position: inherit;
+    background-color: grey;
+    color: cornsilk;
+    border-radius: 4px;
+}
 .buttons{
     padding-bottom:5px;
 }
@@ -72,8 +82,8 @@ export default contador;
 }
 
 .counter{
-    border-color: rgb(68, 66, 66);
+    border-color: #8d8a8a;
     border-style: solid;
-    background-color: rgb(129, 169, 221);
+    background-color: #2a282e
 }
 </style>
