@@ -1,17 +1,14 @@
 <template>
-
 <div class="counter">
     <div class="main">
         <h1>Contador</h1>
         <h2>{{ counter }}</h2>
     </div>
     <div class="buttons">
-        <button @click="decreaseCounter">-</button>
-        <button @click="increaseConter">+</button>
+        <button class="bminus" @click="decreaseCounter">-</button>
+        <button class="bplus" @click="increaseConter">+</button>
     </div>
 </div>
-
-
 </template>
 
 <script lang='ts'>
@@ -46,5 +43,37 @@ export default contador;
 
 
 <style>
-.buttons{}
+.buttons{
+    padding-bottom:5px;
+}
+.bminus{
+    background-color: #f44336;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    border: none;
+    margin-right: 2px;
+    border-radius: 2px;
+}
+.bminus:hover{
+    background-color: #f82c1d;
+}
+.bplus{
+    background-color: #94e215;
+    color: white;
+    text-decoration: none;
+    font-size: 30px;
+    border:none;
+    border-radius: 2px;
+}
+
+.bplus:hover{
+    background-color:#9df314 ;
+}
+
+.counter{
+    border-color: rgb(68, 66, 66);
+    border-style: solid;
+    background-color: rgb(129, 169, 221);
+}
 </style>
